@@ -1,17 +1,21 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html ng-app="questionnaireModule">
 <head>
-    <meta name="viewport" content="width=device-width" charset="utf-8"/> 
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+   
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-  
+    <script src="~/Scripts/main-module.js"></script>
     <title>Questionnaire</title>
-    
+    @RenderSection("InitJs", required: false)
+
 </head>
-    <body>
-        <div class="container container-fluid">
-            @RenderBody()
-        </div>
-    </body>
+<body>
+    <div class="container container-fluid">
+        @RenderBody()
+    </div>
+</body>
+
 </html>

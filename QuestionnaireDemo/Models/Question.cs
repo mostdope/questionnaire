@@ -13,7 +13,7 @@ namespace QuestionnaireDemo.Models
         }
         public Question(string text) : this()
         {
-            
+            Text = text;
         }
 
         public string Text { get; set; }

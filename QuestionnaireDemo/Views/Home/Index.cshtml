@@ -1,25 +1,49 @@
-﻿@model List<QuestionnaireDemo.Models.Question>
+﻿@model string
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@section InitJs {
 
-<div class="row">
-    <div class="col-md-6">
-        <table class="table table-condensed table-hover">
-            <tr>
-                <th>Question</th>
-                <th>Answer</th>
-            </tr>
-            <tr>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-            </tr>
-        </table>
-    </div> 
+    <script src="~/Scripts/Questions/questions-controller.js"></script>
+    <script type="text/javascript">
+     
+        root.factory('questionsData', function() {
+            return {
+                questions:@Model
+            };
+        });
+    </script>
+}
+
+<div class="container" >
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-condensed table-hover">
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                </tr>
+                <tr ng-controller="QuestionsController" ng-repeat="question in quests">
+                    <td>
+                        {{question.text}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-condensed table-hover">
+                <tr>
+                    <th>Question</th>
+                    <th>Answer</th>
+                </tr>
+                <tr ng-repeat="question in questions">
+                    <td>
+                        {{question.text}}
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
 </div>
 
 
