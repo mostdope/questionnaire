@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="questionsApp" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    
+    <meta name="viewport" content="width=device-width" charset="utf-8" />
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="/Scripts/app/app.js"></script>
+    <script src="/Scripts/app/controllers/questionsController.js"></script>
+    <script src="/Scripts/app/services/questionsService.js"></script>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Questionnaire</title>
+</head>
+<body>
+    <div class="container" ng-controller="questionsController">
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-condensed table-hover">
+                    <tr>
+                        <th>Question</th>
+                    </tr>
+                    <tr ng-repeat="question in questions">
+                        <td>{{question.text}}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
