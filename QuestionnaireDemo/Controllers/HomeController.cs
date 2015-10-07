@@ -14,10 +14,10 @@ namespace QuestionnaireDemo.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            var source = new List<Question>{new Question("123"), new Question("321")};
-            var settings = new JsonSerializerSettings() { ContractResolver = new CamelCasePropertyNamesContractResolver() };
-            var questions = JsonConvert.SerializeObject(source, Formatting.None, settings);
-            return View(model:questions);
+            //var source = new List<Question>{new Question("123"), new Question("321")};
+            //var settings = new JsonSerializerSettings() { ContractResolver = new CamelCasePropertyNamesContractResolver() };
+            //var questions = JsonConvert.SerializeObject(source, Formatting.None, settings);
+            return View();
         }
     }
 }
