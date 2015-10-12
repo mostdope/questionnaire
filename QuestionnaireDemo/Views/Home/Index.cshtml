@@ -3,23 +3,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<div class="container" ng-controller="questionController">
+@section QuestionInit{
+    <script src="~/Scripts/app/controllers/questionnaireController.js"></script>
+<script src="~/Scripts/app/controllers/statsController.js"></script>
+    
+}
+<div class="container"  > 
     <div class="row">
-        <div class="col-md-6">
-            <table class="table table-condensed table-hover">
-                <tr>
-                    <th>Question</th>
-                    <th>Answer</th>
-                </tr>
-                <tr ng-repeat="question in questions">
-                    <td>
-                        {{question.text}}
-                    </td>
-                </tr>
-            </table>
+        <div style="margin-top: 60px; background: #00ced1" class="col-md-6" data-ng-controller="questionnaireController">
+            <div class="row">
+                <div>
+                    <span class="h2">{{pageheader}}</span>
+                </div>
+            </div>
+            <div class="questionnaire" ng-repeat="questionnaire in questionnaires">
+                <div>
+                    <span class="h3">Опрос: </span>
+                    <span class="h3">{{questionnaire.name}}</span>
+                </div>
+                <div class="row">
+                    <div class="question" ng-repeat="question in questionnaire.questions">
+                        <div>
+                            <span class="h4">{{question.text}}</span>
+                        </div>
+
+                        <div class="answer" ng-repeat="answer in question.answers">
+                            <label class="label label-primary">
+                                <input type="radio" name="{{question.text}}" />
+                                {{answer.text}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <input type="submit" class="btn btn-primary" value="Submit" ng-click="calcStats()" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style=" margin-top: 60px;"  data-ng-controller="statsController">
+            <div class="row">
+                <div class="bg-primary">
+                    <span >{{chartName}}</span>
+                </div>
+                <div id="chart-container">
+                    <script type="text/javascript">
+                        $(function() {
+
+                        });
+                    </script>
+                </div>
+            </div>
         </div>
     </div>
+   
 </div>
 
 

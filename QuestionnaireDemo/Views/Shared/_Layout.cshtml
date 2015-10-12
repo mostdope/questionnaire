@@ -1,24 +1,37 @@
 ﻿<!DOCTYPE html>
 
-<html ng-app="questionApp">
-<head>
-    <script src="~/Scripts/angular/angular.min.js"></script>
-    <script src="~/Scripts/angular/angular-resource.min.js"></script>
-    <script src="~/Scripts/app/app.js"></script>
-    <script src="~/Scripts/app/controllers/questionsController.js"></script>
-    <script src="~/Scripts/app/services/questionsService.js"></script>
-    <meta name="viewport" content="width=device-width" charset="utf-8" />
+<html data-ng-app="appMain">
+    <head>
+        <meta name="viewport" content="width=device-width" charset="utf-8" />
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-    <title>Questionnaire</title>
+        <script src="~/lib/angular/angular.min.js"></script>
+        <script src="~/lib/angular/angular-resource.min.js"></script>
 
+        <script src="~/Scripts/app/app.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <link href="~/Content/bootstrap/themes/bootstrap-united.css" rel="stylesheet" />
+        <script src="~/lib/bootstrap/bootstrap.min.js"></script>
+        <link href="~/Content/questionnaire.css" rel="stylesheet" />
+        <title>Questionnaire</title>
 
-</head>
-<body>
+    </head>
+
+<body class="container">
+    <div class="nav navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="~/Home/Index">Questionnaire</a>
+            </div>
+     
+        </div>
+    </div>
+    <div>
+
+    </div>
     <div class="container container-fluid">
         @RenderBody()
     </div>
+    @RenderSection("QuestionInit", required:false)
 </body>
 
 </html>

@@ -18,8 +18,10 @@ namespace QuestionnaireDemo
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            GlobalConfiguration.Configuration.Formatters.Remove(
-                GlobalConfiguration.Configuration.Formatters.XmlFormatter);
+            GlobalConfiguration.Configure(WebApiConfig.SetUpSerializer);
+           
+            //GlobalConfiguration.Configuration.Formatters.Remove(
+            //    GlobalConfiguration.Configuration.Formatters.XmlFormatter);
         }
     }
 }

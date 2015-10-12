@@ -14,7 +14,7 @@ namespace QuestionnaireDemo.api
         
         public IEnumerable<Question> Get()
         {
-            return new [] { new Question("What is your nam?"), new Question("How old are you?") };
+            return new [] { new Question("What is your name?"), new Question("How old are you?") };
         }
 
         // GET api/<controller>/5

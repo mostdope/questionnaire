@@ -7,6 +7,7 @@ namespace QuestionnaireDemo.Models
 {
     public class Answer
     {
+        
         public Answer()
         {
             
@@ -16,6 +17,7 @@ namespace QuestionnaireDemo.Models
             Text = text;
         }
 
+        public int Id { get; set; }
         public string Text { get; set; }
         public bool IsSelected { get; set; }
     }

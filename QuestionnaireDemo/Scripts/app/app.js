@@ -1,6 +1,4 @@
-﻿(function() {
-   
+﻿
+    var appMain = angular.module('appMain', []);
 
-    angular.module('questionsApp', ['questionsServices']);
-
-});
+    
