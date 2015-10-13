@@ -29,11 +29,11 @@
 
                         <div class="answer" ng-repeat="answer in question.answers">
                             <label class="label label-primary">
-                                <input type="radio" ng-value="answer.isSelected"  name="{{question.text}}" />
+                                <input type="radio" data-ng-model="answer.checked"  name="{{question.text}}" />
                                 {{answer.text}}
                                 
                             </label>
-                            <span>{{answer.isSelected}}</span>
+                          
                         </div>
                     </div>
                 </div>
