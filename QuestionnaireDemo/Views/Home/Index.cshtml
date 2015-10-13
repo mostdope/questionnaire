@@ -10,7 +10,7 @@
 }
 <div class="container"  > 
     <div class="row">
-        <div style="margin-top: 60px; background: #00ced1" class="col-md-6" data-ng-controller="questionnaireController">
+        <div style="margin-top: 60px;" class="col-md-6" data-ng-controller="questionnaireController">
             <div class="row">
                 <div>
                     <span class="h2">{{pageheader}}</span>
@@ -29,9 +29,11 @@
 
                         <div class="answer" ng-repeat="answer in question.answers">
                             <label class="label label-primary">
-                                <input type="radio" name="{{question.text}}" />
+                                <input type="radio" ng-value="answer.isSelected"  name="{{question.text}}" />
                                 {{answer.text}}
+                                
                             </label>
+                            <span>{{answer.isSelected}}</span>
                         </div>
                     </div>
                 </div>

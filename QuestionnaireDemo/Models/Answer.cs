@@ -19,6 +19,6 @@ namespace QuestionnaireDemo.Models
 
         public int Id { get; set; }
         public string Text { get; set; }
-        public bool IsSelected { get; set; }
+        public bool Checked { get; set; }
     }
 }
